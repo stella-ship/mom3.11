@@ -41,9 +41,9 @@
 
     .music-btn{
       position:fixed;
-      top:18px;
-      right:18px;
-      z-index:20;
+      top:14px;
+      right:14px;
+      z-index:999;
       border:none;
       border-radius:14px;
       padding:10px 14px;
@@ -59,7 +59,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:22px 16px 36px;
+      padding:20px 14px 30px;
       position:relative;
       z-index:2;
     }
@@ -68,12 +68,15 @@
       width:min(420px,92vw);
       text-align:center;
       transition:opacity .7s ease, transform .7s ease;
+      margin:0 auto;
     }
     .envelope-wrap.hide{
       opacity:0;
       transform:translateY(-16px) scale(.98);
       pointer-events:none;
+      position:absolute;
     }
+
     .hint{
       margin-top:18px;
       color:#7c6f76;
@@ -89,6 +92,7 @@
       margin:0 auto;
       filter:drop-shadow(0 20px 40px rgba(0,0,0,.12));
     }
+
     .env-back{
       position:absolute;
       inset:0;
@@ -97,6 +101,7 @@
       overflow:hidden;
       border:1px solid rgba(0,0,0,.05);
     }
+
     .env-front{
       position:absolute;
       left:0; right:0; bottom:0;
@@ -107,6 +112,7 @@
       border-bottom-right-radius:18px;
       z-index:3;
     }
+
     .env-top{
       position:absolute;
       left:0; right:0; top:0;
@@ -120,6 +126,7 @@
     .envelope.open .env-top{
       transform:rotateX(180deg);
     }
+
     .letter-preview{
       position:absolute;
       left:7%;
@@ -134,14 +141,17 @@
       justify-content:center;
       color:#d95b78;
       font-weight:700;
-      font-size:24px;
+      font-size:22px;
       transform:translateY(20px);
       transition:transform .9s ease;
       box-shadow:0 8px 20px rgba(0,0,0,.05) inset;
+      text-align:center;
+      padding:0 10px;
     }
     .envelope.open .letter-preview{
       transform:translateY(-46px);
     }
+
     .seal{
       position:absolute;
       left:50%;
@@ -165,7 +175,9 @@
     }
 
     .card-wrap{
-      width:min(780px,94vw);
+      width:100%;
+      max-width:680px;
+      margin:0 auto;
       opacity:0;
       transform:translateY(30px) scale(.98);
       pointer-events:none;
@@ -178,15 +190,17 @@
     }
 
     .card{
-      background:rgba(255,255,255,.92);
+      width:100%;
+      background:rgba(255,255,255,.94);
       backdrop-filter:blur(8px);
       border:1px solid rgba(255,255,255,.7);
-      border-radius:28px;
-      padding:28px 20px 24px;
-      box-shadow:0 20px 60px rgba(0,0,0,.12);
+      border-radius:24px;
+      padding:22px 18px 20px;
+      box-shadow:0 16px 40px rgba(0,0,0,.10);
       position:relative;
       overflow:hidden;
     }
+
     .card:before{
       content:"";
       position:absolute;
@@ -210,25 +224,18 @@
     }
 
     .title{
-      margin:0 0 8px;
-      font-size:30px;
+      margin:0 0 14px;
+      font-size:28px;
       line-height:1.2;
-      position:relative;
-      z-index:1;
-    }
-    .sub{
-      color:#8a7c82;
-      font-size:14px;
-      margin-bottom:16px;
       position:relative;
       z-index:1;
     }
 
     .msg{
-      font-size:18px;
-      line-height:2;
+      font-size:17px;
+      line-height:1.95;
       white-space:pre-wrap;
-      min-height:220px;
+      min-height:190px;
       position:relative;
       z-index:1;
     }
@@ -247,9 +254,9 @@
 
     .gallery{
       position:relative;
-      margin:22px 0 8px;
-      height:420px;
-      border-radius:22px;
+      margin:20px 0 10px;
+      height:360px;
+      border-radius:18px;
       overflow:hidden;
       z-index:1;
       background:rgba(255,255,255,.45);
@@ -267,7 +274,7 @@
       position:absolute;
       inset:0;
       opacity:0;
-      transform:scale(1.05);
+      transform:scale(1.04);
       transition:opacity 1.4s ease, transform 1.8s ease;
     }
     .slide.active{
@@ -284,15 +291,15 @@
 
     .caption{
       position:absolute;
-      left:16px;
-      right:16px;
-      bottom:16px;
+      left:12px;
+      right:12px;
+      bottom:12px;
       z-index:3;
-      padding:12px 14px;
-      border-radius:16px;
+      padding:10px 12px;
+      border-radius:14px;
       background:rgba(0,0,0,.28);
       color:#fff;
-      font-size:15px;
+      font-size:14px;
       line-height:1.6;
       opacity:0;
       transform:translateY(10px);
@@ -307,7 +314,7 @@
     .from{
       margin-top:14px;
       text-align:right;
-      font-size:18px;
+      font-size:17px;
       font-weight:700;
       color:#4a3f44;
       position:relative;
@@ -317,11 +324,11 @@
     .endline{
       margin-top:12px;
       text-align:center;
-      font-size:26px;
+      font-size:22px;
       line-height:1.5;
       color:#d85d7b;
       font-weight:800;
-      letter-spacing:.5px;
+      letter-spacing:.3px;
       opacity:0;
       transform:translateY(12px) scale(.96);
       transition:all .9s ease;
@@ -332,24 +339,77 @@
     }
 
     @media (max-width:640px){
-      .title{font-size:24px}
-      .msg{font-size:17px;min-height:250px}
-      .gallery{height:300px}
-      .music-btn{top:12px;right:12px;padding:9px 12px}
-      .endline{font-size:22px}
+      .screen{
+        padding:16px 10px 24px;
+      }
+
+      .envelope-wrap{
+        width:88vw;
+      }
+
+      .card-wrap{
+        width:100%;
+        max-width:100%;
+      }
+
+      .card{
+        width:100%;
+        border-radius:20px;
+        padding:18px 14px 18px;
+      }
+
+      .title{
+        font-size:22px;
+      }
+
+      .msg{
+        font-size:16px;
+        line-height:1.9;
+        min-height:160px;
+      }
+
+      .gallery{
+        height:260px;
+        margin:18px 0 8px;
+        border-radius:16px;
+      }
+
+      .caption{
+        left:10px;
+        right:10px;
+        bottom:10px;
+        font-size:13px;
+        padding:10px 12px;
+        border-radius:12px;
+      }
+
+      .from{
+        font-size:16px;
+      }
+
+      .endline{
+        font-size:20px;
+      }
+
+      .music-btn{
+        top:12px;
+        right:12px;
+        padding:9px 12px;
+        font-size:14px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="hearts" id="hearts"></div>
 
-  <button class="music-btn" id="musicBtn">🎵 BGM</button>
+  <button class="music-btn" id="musicBtn">🎵 点我播放</button>
 
   <div class="screen">
     <div class="envelope-wrap" id="envelopeWrap">
       <div class="envelope" id="envelope">
         <div class="env-back"></div>
-        <div class="letter-preview">妈妈，生日快乐</div>
+        <div class="letter-preview">给妈妈的一封回忆信</div>
         <div class="env-top"></div>
         <div class="env-front"></div>
         <div class="seal">💌</div>
@@ -359,8 +419,8 @@
 
     <div class="card-wrap" id="cardWrap">
       <div class="card">
-        <h1 class="title">To 妈妈：</h1>
-<div class="sub" id="dateText" style="display:none;"></div>
+        <h1 class="title">给妈妈的一封信</h1>
+
         <div id="msg" class="msg"></div>
 
         <div class="gallery" id="gallery">
@@ -374,12 +434,12 @@
         </div>
 
         <div class="from">—— 永远爱你的我 ❤️</div>
-        <div class="endline" id="endline">妈妈，生日快乐🎂3，11。</div>
+        <div class="endline" id="endline">妈妈，谢谢你一直爱我。</div>
       </div>
     </div>
   </div>
 
-  <audio id="music" loop>
+  <audio id="music" preload="auto" loop playsinline webkit-playsinline>
     <source src="mom.mp3" type="audio/mpeg">
   </audio>
 
@@ -391,68 +451,77 @@
     const music = document.getElementById("music");
     const musicBtn = document.getElementById("musicBtn");
     const hearts = document.getElementById("hearts");
-    const dateText = document.getElementById("dateText");
     const gallery = document.getElementById("gallery");
     const slides = document.querySelectorAll(".slide");
     const caption = document.getElementById("caption");
     const endline = document.getElementById("endline");
 
     const text = `妈妈，生日快乐🎂
-亲爱的妈妈：
 
-生日快乐。
+有时候在想，
+好像从我记事开始，
+你就一直在为我操心。
 
-写下这封信的时候，我在想你。想你此刻在做什么，想你今天有没有好好吃顿饭，想你有没有也正在想我。
+小时候是吃什么、穿什么、有没有受委屈，
+长大以后是我过得好不好、累不累、有没有人照顾我。
 
-妈妈，我知道你这些年的不容易。你在外面打拼，风里来雨里去，都是为了给我一个更好的未来。小时候我不懂，为什么别人都有妈妈陪，而我没有。后来我懂了，你不是不想陪我，你是不得不离开。你的每一次转身离开，心里都比我还难受吧。
+你总是把我的事情放在第一位，
+却很少认真想过自己。
 
-可是妈妈，我想告诉你，我从来没有怪过你。我知道你的爱，一直都在。它藏在每一次电话里的叮咛里，藏在每一份寄回来的礼物里，藏在你拼命工作、省吃俭用、只想让我过得好一点的每一个日夜里。你的爱虽然隔着距离，但我一直都感受得到。
+以前觉得这些都是理所当然，
+现在才慢慢明白，
+原来这些“理所当然”，
+都是你一点一点的付出和爱。
 
-你是那么坚强、那么能干的一个人。在外面闯出了自己的一片天，也为我撑起了一个家。我常常想，要是我长大了也能像你一样厉害就好了。你是我心里最了不起的人，也是我拼命努力的动力。
+其实有很多话，
+我平时不太会说出口，
+但我真的一直都很依赖你，
+也一直都很爱你。
 
-以后希望你对自己好一点，累了就休息，想吃什么就吃什么，你过得好，我才真的安心。
+希望新的一岁，
+你可以轻松一点，
+不用总是为我担心，
+多去做让自己开心的事情。
 
-虽然我们聚少离多，但在我心里，你从来都没有缺席。你是我最亲的人，是我最深的牵挂，也是我永远的骄傲。
+也希望时间可以慢一点，
+对你温柔一点，
+让我有更多时间陪着你。
 
-妈妈，生日快乐。愿你身体健康，工作顺利。
+以后换我慢慢照顾你，
+换我多为你想一点。
 
-馨
-2026年3月11日
-
-`;
+妈妈，生日快乐❤️`;
 
     const captions = [
-      "小时候你牵着我走，现在我想慢慢陪着你走。",
-      "很多温柔的时刻，回头看，原来都有你的影子。",
-      "你总说没关系，可你替我挡下了很多风雨。",
-      "以前你照顾我，往后我也想更认真地爱你。",
-      "这些回忆都很珍贵，因为照片里一直有你。"
+      "小时候是你牵着我，现在我想慢慢陪着你。",
+      "很多我觉得普通的日子，其实都是你在撑着我。",
+      "你总说没关系，但其实你帮我挡下了很多事情。",
+      "以前你照顾我，以后我也想好好照顾你。",
+      "这些照片不只是回忆，是我一直被你爱着的证明。"
     ];
 
-    const today = new Date();
-    dateText.textContent = `${today.getFullYear()}年${today.getMonth()+1}月${today.getDate()}日`;
-
-    function tryPlayMusic() {
+    function playMusic() {
       music.play().then(() => {
-        musicBtn.textContent = "🎵 BGM中";
-      }).catch(() => {
+        musicBtn.textContent = "🎵 播放中";
+      }).catch((err) => {
         musicBtn.textContent = "🎵 点我播放";
+        console.log("播放失败：", err);
       });
     }
 
-    musicBtn.addEventListener("click", () => {
+    function pauseMusic() {
+      music.pause();
+      musicBtn.textContent = "🎵 点我播放";
+    }
+
+    musicBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       if (music.paused) {
-        music.play();
-        musicBtn.textContent = "🎵 BGM中";
+        playMusic();
       } else {
-        music.pause();
-        musicBtn.textContent = "🎵 BGM";
+        pauseMusic();
       }
     });
-
-    window.addEventListener("load", tryPlayMusic);
-    document.addEventListener("touchstart", tryPlayMusic, { once:true });
-    document.addEventListener("click", tryPlayMusic, { once:true });
 
     function launchHearts() {
       setInterval(() => {
@@ -464,7 +533,7 @@
         h.style.fontSize = (14 + Math.random() * 16) + "px";
         hearts.appendChild(h);
         setTimeout(() => h.remove(), 9000);
-      }, 650);
+      }, 700);
     }
     launchHearts();
 
@@ -491,7 +560,7 @@
       setTimeout(() => {
         caption.textContent = text;
         caption.classList.add("show");
-      }, 250);
+      }, 200);
     }
 
     function startMemoryShow() {
@@ -527,7 +596,7 @@
 
       setTimeout(() => {
         cardWrap.classList.add("show");
-        tryPlayMusic();
+        playMusic();
         typeWriter(() => {
           startMemoryShow();
         });
